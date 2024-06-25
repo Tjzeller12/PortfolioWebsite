@@ -1,0 +1,66 @@
+
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+body {
+  font-family: Verdana, sans-serif;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+main {
+  position:relative;
+  width: 100%;
+  color: black;
+  z-index: 99;
+  position: absolute;
+  width: 90%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+header {
+  grid-column: 2/ span 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color : white;
+  background-color: black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+section {
+  grid-column: 2 /span 4;
+  justify-content: space-evenly;
+  padding: 1.5rem;
+  font-size: 1.15rem;
+  margin-bottom: 250px;
+  margin-top: 200px;
+  margin-left: 0px;
+  line-height: 1.5;
+  background-color: rgba(9, 58, 31, 0.979);
+  color : rgb(236, 233, 233);
+}
+
+#portfolioWrapper {
+  /* display: none; */
+  grid-column:2 /span 4;
+  top: 0;
+  bottom: 0;
+
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.619);
+  border: 2px solid rgb(81, 81, 81);
+  border-radius: 10px;
+
+}
+
