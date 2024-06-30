@@ -1,7 +1,7 @@
 import './style.css';
 import * as THREE from './node_modules/three/build/three.module.js';
-import skyImage from './dist/assets/sky.jpg';
-import screenImage from './dist/assets/screen.png';
+import skyImage from './sky.jpg';
+import screenImage from './screen.png';
 
 //import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 //import { add } from 'three/examples/jsm/libs/tween.module.js';
