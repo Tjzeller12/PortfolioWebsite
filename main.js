@@ -1,7 +1,7 @@
 import './style.css';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { add } from 'three/examples/jsm/libs/tween.module.js';
+//import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+//import { add } from 'three/examples/jsm/libs/tween.module.js';
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
