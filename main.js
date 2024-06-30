@@ -1,5 +1,8 @@
 import './style.css';
 import * as THREE from './node_modules/three/build/three.module.js';
+import skyImage from './assets/sky.jpg';
+import screenImage from './assets/screen.png';
+
 //import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 //import { add } from 'three/examples/jsm/libs/tween.module.js';
 
@@ -222,7 +225,7 @@ const lightHelper = new THREE.PointLightHelper(pointlight);
 //scene.add(gridHelper);
 
 //Add background
-const skyTexture = new THREE.TextureLoader().load('sky.jpg');
+const skyTexture = new THREE.TextureLoader().load(skyImage);
 scene.background = skyTexture;
 
 scene.add(pointlight);
@@ -352,7 +355,7 @@ addDesk();
 
 //Make computer monitor
 function addMonitor() {
-  const screenTexture = new THREE.TextureLoader().load('screen.png');
+  const screenTexture = new THREE.TextureLoader().load(screenImage);
   const monitor = new THREE.Mesh(new THREE.BoxGeometry(.2, 1.5, 1.75), new THREE.MeshStandardMaterial({color: 0x000000}));
   const monitorScreen = new THREE.Mesh(new THREE.BoxGeometry(.1, 1.42, 1.67), new THREE.MeshBasicMaterial({map: screenTexture}));
   const monitorStandArm = new THREE.Mesh(new THREE.BoxGeometry(.1, .65, .1), new THREE.MeshStandardMaterial({color: 0x000000}));
