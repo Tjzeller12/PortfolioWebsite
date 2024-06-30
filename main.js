@@ -13,7 +13,7 @@ const zmin = -10;
 const zmax = 24;
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.layers.enable(0);
 camera.layers.enable(1);
 const canvas = document.querySelector('#bg');
@@ -171,7 +171,7 @@ scene.add(fishEye2);
 
 function addTree() {
   const randomX = getRandomInt(-100, 100);
-  const randomZ = getRandomInt(-100, -15);
+  const randomZ = getRandomInt(-90, -15);
   const randomHeight = getRandomInt(2, 3);
   const tree = new THREE.Mesh(
     new THREE.ConeGeometry(1, randomHeight, 8),
@@ -407,30 +407,28 @@ function addPCSetup() {
 addPCSetup();
 
 //Move camera
-let lastScrollTop = 0;
+
 function moveCamera() {
-  const t = document.documentElement.scrollTop || document.body.scrollTop;
-  if(t > lastScrollTop && camera.position.z < zmax) {
-    camera.position.z += .7;
-    fishBody.position.x += .3;
-    fishTail.position.x += .3;
-    fishEye.position.x += .3;
-    fishBody2.position.x += .5;
-    fishTail2.position.x += .5;
-    fishEye2.position.x += .5;
-  } else if(t < lastScrollTop && camera.position.z > zmin) {
-    camera.position.z -= .7;
-    fishBody.position.x -= .3;
-    fishTail.position.x -= .3;
-    fishEye.position.x -= .3;
-    fishBody2.position.x -= .5;
-    fishTail2.position.x -= .5;
-    fishEye2.position.x -= .5;
-  }
-  lastScrollTop = t <= 0 ? 0 : t;
+  const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPosition = window.pageY || document.documentElement.scrollTop;
+
+  const scrollPercentage = Math.min(scrollPosition / totalHeight, 1);
+
+  const newZ = zmin + (zmax - zmin) * scrollPercentage;
+
+  camera.position.z = newZ;
+
+  const fishMoveDistance = (zmax - zmin) * scrollPercentage;
+  fishBody.position.x = -5 + fishMoveDistance * 0.3;
+  fishTail.position.x = -5.15 + fishMoveDistance * 0.3;
+  fishEye.position.x = -4.65 + fishMoveDistance * 0.3;
+
+  fishBody2.position.x = -11 + fishMoveDistance * 0.5;
+  fishTail2.position.x = -11.15 + fishMoveDistance * 0.5;
+  fishEye2.position.x = -10.65 + fishMoveDistance * 0.5;
   
 }
-window.addEventListener('scroll', moveCamera);
+window.addEventListener('scroll', moveCamera, {passive: true});
 
 const houselight = new THREE.PointLight(0xffffff, 80);
 houselight.position.set(0,5,19);
