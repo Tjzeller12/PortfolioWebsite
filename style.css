@@ -1,21 +1,23 @@
-
-
 canvas {
   position: fixed;
   top: 0;
   left: 0;
 }
+
 body {
   font-family: Verdana, sans-serif;
 }
-html, body {
+
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
+
 main {
-  position:relative;
+  position: relative;
   width: 100%;
   color: black;
   z-index: 99;
@@ -33,11 +35,12 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  color : white;
+  color: white;
   background-color: black;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
 section {
   grid-column: 2 /span 4;
   justify-content: space-evenly;
@@ -48,12 +51,12 @@ section {
   margin-left: 0px;
   line-height: 1.5;
   background-color: rgba(9, 58, 31, 0.979);
-  color : rgb(236, 233, 233);
+  color: rgb(236, 233, 233);
 }
 
 #portfolioWrapper {
   /* display: none; */
-  grid-column:2 /span 4;
+  grid-column: 2 /span 4;
   top: 0;
   bottom: 0;
 
@@ -67,4 +70,3 @@ section {
 body {
   height: 200vh;
 }
-

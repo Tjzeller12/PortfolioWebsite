@@ -17,7 +17,7 @@ const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerH
 camera.layers.enable(0);
 camera.layers.enable(1);
 const canvas = document.querySelector('#bg');
-const renderer = new THREE.WebGLRenderer({canvas: canvas});
+const renderer = new THREE.WebGLRenderer({ canvas: canvas });
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -26,75 +26,75 @@ camera.position.set(0, 1, -10);
 
 //Sun
 function addSun() {
-  const geometry = new THREE.IcosahedronGeometry(6,5);
-  const material = new THREE.MeshStandardMaterial({ color: 0xFABD05});
+  const geometry = new THREE.IcosahedronGeometry(6, 5);
+  const material = new THREE.MeshStandardMaterial({ color: 0xFABD05 });
   const sun = new THREE.Mesh(geometry, material);
   sun.position.set(0, 20, -100);
   scene.add(sun);
 }
 addSun();
 //Mountains
-function addMountains( ) {
+function addMountains() {
   //Mountain 1:
   const mountain1 = new THREE.Mesh(
     new THREE.ConeGeometry(20, 25, 8),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   mountain1.position.set(10, 10, -100);
   scene.add(mountain1);
   //Mountain 2:
   const mountain2 = new THREE.Mesh(
     new THREE.ConeGeometry(20, 35, 8),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   mountain2.position.set(-20, 15, -100);
   scene.add(mountain2);
   //Mountain 3:
   const mountain3 = new THREE.Mesh(
     new THREE.ConeGeometry(20, 30, 8),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   mountain3.position.set(30, 10, -100);
   scene.add(mountain3);
   //Mountain 4:
   const mountain4 = new THREE.Mesh(
     new THREE.ConeGeometry(20, 25, 8),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   mountain4.position.set(-30, 10, -100);
   scene.add(mountain4);
   //Mountain 5:
   const mountain5 = new THREE.Mesh(
     new THREE.ConeGeometry(20, 25, 8),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   mountain5.position.set(40, 10, -100);
   scene.add(mountain5);
   //Mountain 6:
   const mountain6 = new THREE.Mesh(
     new THREE.ConeGeometry(20, 17, 8),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   mountain6.position.set(-40, 10, -100);
   scene.add(mountain6);
   //Mountain 7:
   const mountain7 = new THREE.Mesh(
     new THREE.ConeGeometry(30, 25, 8),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   mountain7.position.set(60, 10, -100);
   scene.add(mountain7);
   //Mountain 8:
   const mountain8 = new THREE.Mesh(
     new THREE.ConeGeometry(22, 20, 8),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   mountain8.position.set(-60, 10, -100);
   scene.add(mountain8);
   //Mountain 9:
   const mountain9 = new THREE.Mesh(
     new THREE.ConeGeometry(20, 15, 8),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   mountain9.position.set(80, 5, -100);
   scene.add(mountain9);
@@ -104,22 +104,22 @@ addMountains();
 function addGround() {
   const ground = new THREE.Mesh(
     new THREE.PlaneGeometry(200, 200),
-    new THREE.MeshStandardMaterial({ color: 0xEDEDED})
+    new THREE.MeshStandardMaterial({ color: 0xEDEDED })
   );
   ground.receiveShadow = true;
 
-  ground.rotation.x = -Math.PI/2;
+  ground.rotation.x = -Math.PI / 2;
   ground.position.y = -.5;
   ground.position.z = -115;
   scene.add(ground);
-  const hill = new THREE.Mesh(new THREE.CylinderGeometry(50, 50, 200, 20), new THREE.MeshStandardMaterial({color: 0xEDEDED}));
+  const hill = new THREE.Mesh(new THREE.CylinderGeometry(50, 50, 200, 20), new THREE.MeshStandardMaterial({ color: 0xEDEDED }));
   hill.receiveShadow = true;
   hill.position.set(0, -50.5, -15);
   hill.rotation.x = Math.PI / 2;
   hill.rotation.z = Math.PI / 2;
   scene.add(hill);
 
-  const hill2 = new THREE.Mesh(new THREE.CylinderGeometry(25, 25, 200, 20), new THREE.MeshStandardMaterial({color: 0xEDEDED}));
+  const hill2 = new THREE.Mesh(new THREE.CylinderGeometry(25, 25, 200, 20), new THREE.MeshStandardMaterial({ color: 0xEDEDED }));
   hill2.position.set(0, -25.5, 15);
   hill2.rotation.x = Math.PI / 2;
   hill2.rotation.z = Math.PI / 2;
@@ -129,7 +129,7 @@ addGround();
 
 function addWater() {
   //add reflection with reflector
-  const water = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshStandardMaterial({color: 0x7067f5, transparent: true, opacity: 0.75}));
+  const water = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshStandardMaterial({ color: 0x7067f5, transparent: true, opacity: 0.75 }));
   water.rotation.x = -Math.PI / 2;
   water.position.y = -2;
   scene.add(water);
@@ -137,13 +137,13 @@ function addWater() {
 addWater();
 
 
-const fishBody = new THREE.Mesh(new THREE.CapsuleGeometry(.45, .65, 2, 4 ), new THREE.MeshStandardMaterial({color: 0x02b860}));
+const fishBody = new THREE.Mesh(new THREE.CapsuleGeometry(.45, .65, 2, 4), new THREE.MeshStandardMaterial({ color: 0x02b860 }));
 const points = [];
-for ( let i = 0; i < 11; i++) {
-  points.push( new THREE.Vector2( Math.sin( i * 0.05 ) * 0.5 + 0.2, ( i - .00005 ) * .11 ));
+for (let i = 0; i < 11; i++) {
+  points.push(new THREE.Vector2(Math.sin(i * 0.05) * 0.5 + 0.2, (i - .00005) * .11));
 }
-const fishTail = new THREE.Mesh(new THREE.LatheGeometry(points), new THREE.MeshStandardMaterial({color: 0x02b860}));
-const fishEye = new THREE.Mesh(new THREE.SphereGeometry(.1, 8, 8), new THREE.MeshStandardMaterial({color: 0x000000}));
+const fishTail = new THREE.Mesh(new THREE.LatheGeometry(points), new THREE.MeshStandardMaterial({ color: 0x02b860 }));
+const fishEye = new THREE.Mesh(new THREE.SphereGeometry(.1, 8, 8), new THREE.MeshStandardMaterial({ color: 0x000000 }));
 fishBody.position.set(-5, -2.5, 0);
 fishTail.position.set(-5.15, -2.5, 0);
 fishTail.rotation.z = Math.PI / 2;
@@ -155,9 +155,9 @@ scene.add(fishTail);
 scene.add(fishEye);
 
 //Add second fish
-const fishBody2 = new THREE.Mesh(new THREE.CapsuleGeometry(.45, .65, 2, 4 ), new THREE.MeshStandardMaterial({color: 0x02b860}));
-const fishTail2 = new THREE.Mesh(new THREE.LatheGeometry(points), new THREE.MeshStandardMaterial({color: 0x02b860}));
-const fishEye2 = new THREE.Mesh(new THREE.SphereGeometry(.1, 8, 8), new THREE.MeshStandardMaterial({color: 0x000000}));
+const fishBody2 = new THREE.Mesh(new THREE.CapsuleGeometry(.45, .65, 2, 4), new THREE.MeshStandardMaterial({ color: 0x02b860 }));
+const fishTail2 = new THREE.Mesh(new THREE.LatheGeometry(points), new THREE.MeshStandardMaterial({ color: 0x02b860 }));
+const fishEye2 = new THREE.Mesh(new THREE.SphereGeometry(.1, 8, 8), new THREE.MeshStandardMaterial({ color: 0x000000 }));
 fishBody2.position.set(-5 - 6, -2.5, 0 + 1.5);
 fishTail2.position.set(-5.15 - 6, -2.5, 0 + 1.5);
 fishTail2.rotation.z = Math.PI / 2;
@@ -175,30 +175,30 @@ function addTree() {
   const randomHeight = getRandomInt(2, 3);
   const tree = new THREE.Mesh(
     new THREE.ConeGeometry(1, randomHeight, 8),
-    new THREE.MeshStandardMaterial({ color: 0x3D9970})
+    new THREE.MeshStandardMaterial({ color: 0x3D9970 })
   );
-  
-  if(randomHeight == 2) {
+
+  if (randomHeight == 2) {
     tree.position.set(randomX, 1, randomZ);
   } else {
     tree.position.set(randomX, 1.5, randomZ);
   }
   const trunk = new THREE.Mesh(
     new THREE.CylinderGeometry(0.1, 0.1, 1),
-    new THREE.MeshStandardMaterial({ color: 0x8B4513})
+    new THREE.MeshStandardMaterial({ color: 0x8B4513 })
   );
   trunk.position.set(randomX, 0, randomZ);
   scene.add(tree);
   scene.add(trunk);
 }
 
-for(let i = 0; i < 1000; i++) {
+for (let i = 0; i < 1000; i++) {
   addTree();
 }
 
 
 const pointlight = new THREE.PointLight(0xffffff, 150);
-pointlight.position.set(0,20,-88);
+pointlight.position.set(0, 20, -88);
 
 //Sun light
 const sunLight = new THREE.DirectionalLight(0xffffff, 4.5);
@@ -233,9 +233,9 @@ scene.add(pointlight);
 
 //Add window
 function createWindow() {
-  const hfGeometry = new THREE.BoxGeometry(3.5,.25,.25);
-  const vfGeometry = new THREE.BoxGeometry(.25,3,.25);
-  const material = new THREE.MeshStandardMaterial({color : 0X402400});
+  const hfGeometry = new THREE.BoxGeometry(3.5, .25, .25);
+  const vfGeometry = new THREE.BoxGeometry(.25, 3, .25);
+  const material = new THREE.MeshStandardMaterial({ color: 0X402400 });
   const leftFrame = new THREE.Mesh(vfGeometry, material);
   const rightFrame = new THREE.Mesh(vfGeometry, material);
   const topFrame = new THREE.Mesh(hfGeometry, material);
@@ -255,8 +255,8 @@ function createWindow() {
 }
 createWindow();
 function createWall(x, y, z, numOfLogs, facingCam) {
-  for(let i = 0; i < numOfLogs; i++) {
-    const log = new THREE.Mesh(new THREE.CylinderGeometry(.5, .5, 3, 8), new THREE.MeshStandardMaterial({color: 0x664101}));
+  for (let i = 0; i < numOfLogs; i++) {
+    const log = new THREE.Mesh(new THREE.CylinderGeometry(.5, .5, 3, 8), new THREE.MeshStandardMaterial({ color: 0x664101 }));
     log.layers.set(1);
     // After adding a log in the createWall function
     console.log("Log Layer: ", log.layers.mask.toString(2)); // Should output '10' in binary (only layer 1)
@@ -267,17 +267,17 @@ function createWall(x, y, z, numOfLogs, facingCam) {
     }
     log.position.set(x, y + i * .5, z);
     log.rotation.x = Math.PI / 2;
-    if(facingCam) {
+    if (facingCam) {
       log.rotation.z = Math.PI / 2;
     }
     scene.add(log);
   }
-  
+
 }
 
 //Make ceiling
 function makeHouseCeiling() {
-  const ceiling = new THREE.Mesh(new THREE.PlaneGeometry(10, 8), new THREE.MeshStandardMaterial({color: 0x664101}));
+  const ceiling = new THREE.Mesh(new THREE.PlaneGeometry(10, 8), new THREE.MeshStandardMaterial({ color: 0x664101 }));
   ceiling.castShadow = true;
   ceiling.position.set(0, 7, 17.5);
   ceiling.rotation.x = Math.PI / 2;
@@ -288,7 +288,7 @@ function makeHouseCeiling() {
 
 //Make floor
 function makeHouseFloor() {
-  const floor = new THREE.Mesh(new THREE.PlaneGeometry(15, 12), new THREE.MeshStandardMaterial({color: 0x664101}));
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(15, 12), new THREE.MeshStandardMaterial({ color: 0x664101 }));
   floor.receiveShadow = true;
   floor.position.set(0, -0.5, 20);
   floor.rotation.x = Math.PI / 2;
@@ -310,15 +310,15 @@ function makeHouse() {
   createWall(5.15, -.25, 22, 15, false);
   createWall(-5.15, -.25, 22, 15, false);
   //Make plains to block light for walls
-  const leftWall = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshStandardMaterial({color: 0x664101}));
+  const leftWall = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshStandardMaterial({ color: 0x664101 }));
   leftWall.castShadow = true;
   leftWall.position.set(-6, 30, 11);
   leftWall.rotation.y = - Math.PI / 4;
   scene.add(leftWall);
-  const rightWall = new THREE.Mesh(new THREE.PlaneGeometry(10, 500), new THREE.MeshStandardMaterial({color: 0x664101}));
+  const rightWall = new THREE.Mesh(new THREE.PlaneGeometry(10, 500), new THREE.MeshStandardMaterial({ color: 0x664101 }));
   rightWall.castShadow = true;
   rightWall.position.set(6, 10, 11);
-  rightWall.rotation.y = Math.PI  / 4;
+  rightWall.rotation.y = Math.PI / 4;
   scene.add(rightWall);
 
   makeHouseCeiling();
@@ -329,11 +329,11 @@ makeHouse();
 
 //Make desk
 function addDesk() {
-  const deskLeg1 = new THREE.Mesh(new THREE.CylinderGeometry(.10, .025, 3, 8), new THREE.MeshStandardMaterial({color: 0x522d01}));
-  const deskLeg2 = new THREE.Mesh(new THREE.CylinderGeometry(.10, .025, 3, 8), new THREE.MeshStandardMaterial({color: 0x522d01}));
-  const deskLeg3 = new THREE.Mesh(new THREE.CylinderGeometry(.10, .025, 3, 8), new THREE.MeshStandardMaterial({color: 0x522d01}));
-  const deskLeg4 = new THREE.Mesh(new THREE.CylinderGeometry(.10, .025, 3, 8), new THREE.MeshStandardMaterial({color: 0x522d01}));
-  const deskTop = new THREE.Mesh(new THREE.BoxGeometry(2, .15, 3), new THREE.MeshStandardMaterial({color: 0x522d01}));
+  const deskLeg1 = new THREE.Mesh(new THREE.CylinderGeometry(.10, .025, 3, 8), new THREE.MeshStandardMaterial({ color: 0x522d01 }));
+  const deskLeg2 = new THREE.Mesh(new THREE.CylinderGeometry(.10, .025, 3, 8), new THREE.MeshStandardMaterial({ color: 0x522d01 }));
+  const deskLeg3 = new THREE.Mesh(new THREE.CylinderGeometry(.10, .025, 3, 8), new THREE.MeshStandardMaterial({ color: 0x522d01 }));
+  const deskLeg4 = new THREE.Mesh(new THREE.CylinderGeometry(.10, .025, 3, 8), new THREE.MeshStandardMaterial({ color: 0x522d01 }));
+  const deskTop = new THREE.Mesh(new THREE.BoxGeometry(2, .15, 3), new THREE.MeshStandardMaterial({ color: 0x522d01 }));
 
   deskLeg1.receiveShadow = true;
   deskLeg2.receiveShadow = true;
@@ -356,10 +356,10 @@ addDesk();
 //Make computer monitor
 function addMonitor() {
   const screenTexture = new THREE.TextureLoader().load(screenImage);
-  const monitor = new THREE.Mesh(new THREE.BoxGeometry(.2, 1.5, 1.75), new THREE.MeshStandardMaterial({color: 0x000000}));
-  const monitorScreen = new THREE.Mesh(new THREE.BoxGeometry(.1, 1.42, 1.67), new THREE.MeshBasicMaterial({map: screenTexture}));
-  const monitorStandArm = new THREE.Mesh(new THREE.BoxGeometry(.1, .65, .1), new THREE.MeshStandardMaterial({color: 0x000000}));
-  const monitorStandBase = new THREE.Mesh(new THREE.BoxGeometry(.5, .1, .5), new THREE.MeshStandardMaterial({color: 0x000000}));
+  const monitor = new THREE.Mesh(new THREE.BoxGeometry(.2, 1.5, 1.75), new THREE.MeshStandardMaterial({ color: 0x000000 }));
+  const monitorScreen = new THREE.Mesh(new THREE.BoxGeometry(.1, 1.42, 1.67), new THREE.MeshBasicMaterial({ map: screenTexture }));
+  const monitorStandArm = new THREE.Mesh(new THREE.BoxGeometry(.1, .65, .1), new THREE.MeshStandardMaterial({ color: 0x000000 }));
+  const monitorStandBase = new THREE.Mesh(new THREE.BoxGeometry(.5, .1, .5), new THREE.MeshStandardMaterial({ color: 0x000000 }));
   monitor.receiveShadow = true;
   monitorScreen.receiveShadow = true;
   monitorStandArm.receiveShadow = true;
@@ -379,21 +379,21 @@ function addMonitor() {
 }
 //Make PC
 function addPC() {
-  const pc = new THREE.Mesh(new THREE.BoxGeometry(1.25, 1.25, .75), new THREE.MeshStandardMaterial({color: 0x000000}));
+  const pc = new THREE.Mesh(new THREE.BoxGeometry(1.25, 1.25, .75), new THREE.MeshStandardMaterial({ color: 0x000000 }));
   pc.position.set(3.15, 1.25, 16);
   scene.add(pc);
 }
 
 function addKeyboardAndMouse() {
   //Make keyboard
-  const keyboard = new THREE.Mesh(new THREE.BoxGeometry(.3, .1, .8), new THREE.MeshStandardMaterial({color: 0x000000}));
-  const keyboardKeys = new THREE.Mesh(new THREE.BoxGeometry(.26, .1, .75), new THREE.MeshStandardMaterial({color: 0x808080}));
+  const keyboard = new THREE.Mesh(new THREE.BoxGeometry(.3, .1, .8), new THREE.MeshStandardMaterial({ color: 0x000000 }));
+  const keyboardKeys = new THREE.Mesh(new THREE.BoxGeometry(.26, .1, .75), new THREE.MeshStandardMaterial({ color: 0x808080 }));
   keyboard.position.set(2.5, .7, 17.5);
   keyboardKeys.position.set(2.5, .71, 17.5);
   scene.add(keyboard);
   scene.add(keyboardKeys);
   //add mouse
-  const mouse = new THREE.Mesh(new THREE.BoxGeometry(.3, .1, .15), new THREE.MeshStandardMaterial({color: 0x000000}));
+  const mouse = new THREE.Mesh(new THREE.BoxGeometry(.3, .1, .15), new THREE.MeshStandardMaterial({ color: 0x000000 }));
   mouse.position.set(2.5, .71, 18.3);
   scene.add(mouse);
 }
@@ -426,12 +426,12 @@ function moveCamera() {
   fishBody2.position.x = -11 + fishMoveDistance * 0.5;
   fishTail2.position.x = -11.15 + fishMoveDistance * 0.5;
   fishEye2.position.x = -10.65 + fishMoveDistance * 0.5;
-  
+
 }
-window.addEventListener('scroll', moveCamera, {passive: true});
+window.addEventListener('scroll', moveCamera, { passive: true });
 
 const houselight = new THREE.PointLight(0xffffff, 80);
-houselight.position.set(0,5,19);
+houselight.position.set(0, 5, 19);
 const houselightHelper = new THREE.PointLightHelper(houselight);
 scene.add(houselight);
 //scene.add(houselightHelper);
