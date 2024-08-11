@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thomas' Portfolio</title>
 </head>
@@ -11,6 +12,34 @@
 <body>
   <canvas id="bg"></canvas>
   <main>
+    <div class="project-side-panel">
+      <h2>Project Gallary</h2>
+      <h4> Snake Battle Royale Gameplay and Training Videos: </h4>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/7SA8ZF1r8BA?si=QhETcwyGP1UtS1Z6"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/cWZhbDDCc5g?si=Qq1atCPYf3kYac3c"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <h4> Integral Calculator Input and Output: </h4>
+      <img src="./IntegralCalcInput2.jpg" alt="Integral Calculator Input"
+        style="width: 38%; height: auto; min-width: 500px;">
+      <img src="./IntegralCalcOutput2.jpg" alt="Integral Calculator Output"
+        style="width: 52%; height: auto; min-width: 700px;">
+      <h4> Monkey Species Classification Custom CNN vs Pretrained Results: </h4>
+      <img src="./CustomCNN.jpg" alt="Custom CNN Output" style="width: 45%; height: auto; min-width: 550px;">
+      <img src="./PretrainedCNN.jpg" alt="Pretrained Neural Network Output"
+        style="width: 45%; height: auto; min-width: 550px;">
+      <h4> Calculator Example Test Cases: </h4>
+      <img src="./CalculatorTest1.jpg" alt="Calculator Example 1" style="width:45%; height: auto; min-width: 400px">
+      <img src="./CalculatorTest2.jpg" alt="Calculator Example 2" style="width:45%; height: auto; min-width: 400px">
+      <h4> Super Mario Baseball Input and Output: </h4>
+      <img src="./MarioBBInput2.jpg" alt="Mario Baseball Input" style="width: 30%; height: auto; min-width: 400px;">
+      <img src="./MarioBBOutput2.jpg" alt="Mario Baseball Output" style="width: 60%; height: auto; min-width: 800px;">
+
+    </div>
     <div id="portfolioWrapper">
       <header>
         <h1>Thomas' Portfolio</h1>
@@ -23,40 +52,45 @@
         </p>
       </section>
       <section id="projects">
+        <button class="side-panel-toggle" type="'button">
+          <span class="material-icons sp-icon-open"> keyboard_double_arrow_right</span>
+          <span class="material-icons sp-icon-close"> keyboard_double_arrow_left</span>
+        </button>
         <h2>Projects</h2>
         <ul>
-          <li>Snake Battle Royal
-            <ul>
-              <li>Snake Battle Royale is an engaging game where players control a snake, aiming to outlast 60 AI-driven
-                snakes. Each AI snake operates on its neural network, developed using the genetic algorithm to enhance
-                their survival strategies.</li>
-            </ul>
-          </li>
-          <li>Integral Calculator</li>
+          <h3>Snake Battle Royale </h3>
           <ul>
-            <li> The Integral Calculator is a tool I designed to compute both definite and indefinite integrals. It
-              utilizes a binary search tree to organize mathematical terms by their degree, ensuring efficient
-              computation and user-friendly interaction.</li>
+            <p>Snake Battle Royale is an engaging game where players control a snake, aiming to outlast 60 AI-driven
+              snakes. Each AI snake operates on its neural network, developed using the genetic algorithm to enhance
+              their survival strategies.
+            <p>
           </ul>
-          <li>Monkey Species Classification CNN</li>
+          <h3>Integral Calculator</h3>
           <ul>
-            <li> This project involves using a Convolutional Neural Network (CNN) to classify 10 different species of
+            <p> The Integral Calculator is a tool I designed to compute both definite and indefinite integrals. It
+              utilizes a binary search tree to organize mathematical terms by their degree, ensuring efficient
+              computation and user-friendly interaction.</p>
+          </ul>
+          <h3>Monkey Species Classification CNN</h3>
+          <ul>
+            <p> This project involves using a Convolutional Neural Network (CNN) to classify 10 different species of
               monkeys. I built and trained a custom neural network using TensorFlow, leveraging the "10-monkey-species"
               dataset from Kaggle. The performance of my model was benchmarked against a pre-trained VGG16 model to
-              gauge its effectiveness.</li>
+              gauge its effectiveness.</p>
           </ul>
-          <li>Calculator</li>
+          <h3>Calculator</h3>
           <ul>
-            <li> In collaboration with three classmates, I developed a multifunctional calculator capable of performing
-              PEDMAS operations (Parentheses, Exponents, Division, Multiplication, Addition, Subtraction). This project
-              was implemented in Java using AWT and Swing frameworks, highlighting our focus on creating a robust and
-              user-friendly application.</li>
+            <p> In collaboration with three classmates, I developed a multifunctional calculator capable of performing
+              PEDMAS operations (Parentheses, Exponents, Division, Multiplication, Addition, Subtraction). The
+              calculator
+              also allows the user to use the '-' unary operator. This project was implemented in Java using AWT and
+              Swing frameworks, highlighting our focus on creating a robust and user-friendly application.</p>
           </ul>
-          <li>Super Mario Baseball</li>
+          <h3>Super Mario Baseball</h3>
           <ul>
-            <li> Super Mario Baseball is a creative project from my Object-Oriented Programming class. It features a
+            <p> Super Mario Baseball is a creative project from my Object-Oriented Programming class. It features a
               hash map to dynamically update stats for various Mario-themed baseball players, display each player's name
-              and statistics, and list the top performers in each statistical category.</li>
+              and statistics, and list the top performers in each statistical category.</p>
           </ul>
         </ul>
         <p> These projects are showcased on my GitHub profile.</p>

@@ -55,11 +55,9 @@ section {
 }
 
 #portfolioWrapper {
-  /* display: none; */
   grid-column: 2 /span 4;
   top: 0;
   bottom: 0;
-
   position: relative;
   background-color: rgba(0, 0, 0, 0.619);
   border: 2px solid rgb(81, 81, 81);
@@ -67,6 +65,83 @@ section {
 
 }
 
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
 body {
   height: 200vh;
+}
+
+.side-panel-toggle {
+  position: absolute;
+  right: 0;
+  transform: translateY(10%);
+  background-color: black;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 1rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+}
+
+.side-panel-toggle:hover {
+  background: rgb(27, 27, 27)
+}
+
+.project-side-panel {
+  top: 10%;
+  position: absolute;
+  left: 41.53%;
+  background: rgba(0, 0, 0, 0.927);
+  padding: 20px;
+  color: rgb(236, 233, 233);
+  width: 65%;
+  border-right: 2px solid rgb(81, 81, 81);
+  border-top: 2px solid rgb(81, 81, 81);
+  border-bottom: 2px solid rgb(81, 81, 81);
+  display: none;
+  overflow: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(81, 81, 81) rgb(0, 0, 0);
+}
+
+.project-side-panel img {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  vertical-align: top;
+}
+
+/* different side panel toggle states */
+.sp-icon-close {
+  display: none !important;
+}
+
+.side-panel-open .project-side-panel {
+  display: initial;
+}
+
+.side-panel-open .sp-icon-open {
+  display: none !important;
+}
+
+.side-panel-open .sp-icon-close {
+  display: initial !important;
 }

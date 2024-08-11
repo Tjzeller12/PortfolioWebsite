@@ -443,4 +443,44 @@ function animate() {
 
   renderer.render(scene, camera);
 }
+/*
+  This function makes sure that the projects gallary side panel has the same
+  height and is horizontally aligned with the projects section.
+*/
+document.addEventListener('DOMContentLoaded', function () {
+  const projectsSection = document.getElementById('projects');
+  const portfolioWrapper = document.getElementById('');
+  const sidePanel = document.querySelector('.project-side-panel');
+  // Go through each parent element and add up the sum of there local top positions to
+  // get the absolute top position.
+  function getElementTop(elem) {
+    var top = 0;
+    do {
+      top += elem.offsetTop || 0;
+      elem = elem.offsetParent;
+    } while (elem);
+
+    return top;
+  }
+
+  function resizeAndRepositionPanel() {
+    // Dynamically set the height of the side panel to match the projects section
+    sidePanel.style.height = `${projectsSection.offsetHeight - 39}px`;
+
+    // Calculate the absolute top of the projects section relative to the document
+    const projectsTop = getElementTop(projectsSection);
+
+    // Set the top style of the side panel to align it with the projects section
+    sidePanel.style.top = `${projectsTop}px`;
+  }
+
+  resizeAndRepositionPanel(); // Adjust when the DOM is fully loaded
+  window.addEventListener('resize', resizeAndRepositionPanel); // Adjust on window resize
+  window.addEventListener('scroll', resizeAndRepositionPanel); // Adjust on scroll
+});
+// Toggle between two css side panel states (open and closed)
+document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+  document.querySelector("main").classList.toggle("side-panel-open");
+});
+
 animate();
